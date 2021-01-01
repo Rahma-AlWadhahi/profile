@@ -6,7 +6,7 @@ export default function Projects() {
       <div className="text-center text-5xl tracking-widest pb-10 uppercase align-middle">
         Projects
       </div>
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <div class="place-self-center m-4">
           <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
             <img
