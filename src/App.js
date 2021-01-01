@@ -1,7 +1,6 @@
 import "./styles/main.css";
 import Intro from "../src/modules/intro/intro";
 import Projects from "../src/modules/projects/projects";
-import Contact from "../src/modules/contact/contact";
 
 function App() {
   return (
