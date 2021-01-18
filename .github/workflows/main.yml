@@ -26,10 +26,10 @@ name: Create Markdown File
 #   pull_request:
 #     branches: [ master ]
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string.
-    # /30 denotes that it will run once every 30 minutes
-    - cron:  '*/5 * * * *'
+#   schedule:
+#     # * is a special character in YAML so you have to quote this string.
+#     # /30 denotes that it will run once every 30 minutes
+#     - cron:  '*/5 * * * *'
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -56,5 +56,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: scheduled ping
-      - uses: sisodiya2421/pinger@v3
+
+  create-meeting-minutes:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: finnp/create-file-action@1.0.0
+      env:
+        FILE_NAME: "docs/DateTime<'Y-m-d H:i:s'>.md"
+        FILE_DATA: "### file content \n testing content"
+
