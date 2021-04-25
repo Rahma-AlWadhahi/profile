@@ -1,26 +1,19 @@
 import "../../styles/main.css";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import AutomationDemo from "../../assets/AutomationDemo.png";
-import EddieHubCommunity from "../../assets/EddieHubCommunity.png";
+import React from "react";
 import PersonalProfile from "../../assets/PersonalProfile.png";
-import NuxtJS from "../../assets/NuxtJS.png";
 
 function Project(props) {
-  const [project, setProject] = useState({
-    title: "",
-    description: "",
-    image: "",
-    ghOwnerName: "",
-    repositoryName: "",
-    ytVideoCode: "",
-  });
-
   return (
     <div class="place-self-center m-4">
-      <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
-        {props.image != "" ? (
-          <img class="w-full" src={props.image} alt={props.title} />
+      <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg justify-items-center">
+        {props.image !== "" ? (
+          <div class="py-6">
+            <img
+              class="mx-auto w-40 h-40"
+              src={props.image}
+              alt={props.title}
+            />
+          </div>
         ) : (
           <div class="text-white text-center px-6 py-20 bg-black">
             <p class="font-bold text-xl mb-2">Coming Soon ...</p>
@@ -32,7 +25,7 @@ function Project(props) {
           <p class="text-gray-700 text-base">{props.description}</p>
         </div>
         <div class="px-6 py-4">
-          {props.ghOwnerName != "" && props.repositoryName != "" ? (
+          {props.ghOwnerName !== "" && props.repositoryName !== "" ? (
             <button
               class="inline-block items-center justify-center p-2"
               onClick={() =>
@@ -56,7 +49,7 @@ function Project(props) {
           ) : (
             ""
           )}
-          {props.ytVideoCode != "" ? (
+          {props.ytVideoCode !== "" ? (
             <button
               class="inline-block items-center justify-center p-2"
               onClick={() =>
@@ -103,7 +96,7 @@ export default function Projects() {
         <Project
           title="Automation Demo"
           description="GitHub Action to automate applying issue labels standards on your repositories."
-          image={AutomationDemo}
+          image="https://avatars.githubusercontent.com/u/44036562?v=4"
           ghOwnerName="Rahma-AlWadhahi"
           repositoryName="AutomationDemo"
           ytVideoCode="PXEPoOA3Mn0"
@@ -111,7 +104,7 @@ export default function Projects() {
         <Project
           title="EddieHub Community Support"
           description="An inclusive Open Source community where we help and support each other with tech."
-          image={EddieHubCommunity}
+          image="https://avatars.githubusercontent.com/u/66388388?v=4"
           ghOwnerName="EddieHubCommunity"
           repositoryName="support"
           ytVideoCode=""
@@ -127,7 +120,7 @@ export default function Projects() {
         <Project
           title="NuxtJS Organization Website"
           description="NuxtJS is an Open Source framework. Its documentation is available in many languages and soon in Arabic."
-          image={NuxtJS}
+          image="https://avatars.githubusercontent.com/u/23360933?v=4"
           ghOwnerName="nuxt"
           repositoryName="nuxtjs.org"
           ytVideoCode=""
